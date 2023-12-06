@@ -20,21 +20,14 @@ public class UserController {
     @Autowired
     public UserService userService;
 
-
-    @PatchMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
-    public User findByIdAndUpdateRole(@PathVariable long id) {
-        return userService.findByIdAndUpdateRole(id);
-    }
-
     @GetMapping
-    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     Page<User> getAllUsers(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "2") int size) {
         return userService.getAllUsers(page, size);
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     User findUserById(@PathVariable long id) {
         return userService.findUserById(id);
     }
@@ -57,8 +50,7 @@ public class UserController {
         userService.findUserByIdAndDelete(loggedUser.getUserId());
     }
 
-    @PatchMapping("/upload")
-    @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
+    @PatchMapping("/me/upload")
     public User uploadAvatar(@RequestParam("avatar") MultipartFile body, @AuthenticationPrincipal User loggedUser) throws IOException {
         System.out.println(body.getSize());
         System.out.println(body.getContentType());
