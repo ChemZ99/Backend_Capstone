@@ -26,13 +26,13 @@ public class UserController {
         return userService.getAllUsers(page, size);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id={id}")
     @PreAuthorize("hasAuthority('ADMIN')")
     User findUserById(@PathVariable long id) {
         return userService.findUserById(id);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/id={id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PreAuthorize("hasAuthority('ADMIN')")
     void findUserByIdAndDelete(@PathVariable long id) {
@@ -48,6 +48,11 @@ public class UserController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void getProfile(@AuthenticationPrincipal User loggedUser) {
         userService.findUserByIdAndDelete(loggedUser.getUserId());
+    }
+
+    @PutMapping("/me/modify")
+    public User findUserByIdAndUpdate(@AuthenticationPrincipal User loggedUser, @RequestBody User body) {
+        return userService.findUserByIdAndUpdate(loggedUser.getUserId(), body);
     }
 
     @PatchMapping("/me/upload")

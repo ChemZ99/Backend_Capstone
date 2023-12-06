@@ -19,7 +19,7 @@ public class AuthService {
 
     public String authUser(UserLoginDTO userLogin) {
 
-        User newUser = userService.findByEmail(userLogin.email());
+        User newUser = userService.findUserByEmail(userLogin.email());
         if (bcrypt.matches(userLogin.password(), newUser.getPassword())) {
             return jwtTools.createToken(newUser);
         } else {

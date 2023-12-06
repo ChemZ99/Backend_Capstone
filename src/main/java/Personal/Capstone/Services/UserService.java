@@ -65,6 +65,18 @@ public class UserService {
         return userRepo.save(newUser);
     }
 
+    public User findUserByIdAndUpdate(long id, User body) throws NotFoundException {
+        User target = this.findUserById(id);
+        target.setUsername(body.getUsername());
+        target.setRole(body.getRole());
+        target.setFirstName(body.getFirstName());
+        target.setLastName(body.getLastName());
+        target.setEmail(body.getEmail());
+        target.setPassword(bcrypt.encode(body.getPassword()));
+        target.setAvatar(body.getAvatar());
+        return userRepo.save(target);
+    }
+
 
     public void findUserByIdAndDelete(long id) throws NotFoundException {
         User foundUser = this.findUserById(id);
@@ -72,12 +84,12 @@ public class UserService {
     }
 
 
-    public User findByEmail(String email) {
+    public User findUserByEmail(String email) {
         return userRepo.findByEmail(email)
                 .orElseThrow(() -> new NotFoundException("User con email " + email + " non trovato!"));
     }
 
-    public User findByIdAndUpdateRole(long id) {
+    public User findUserByIdAndUpdateRole(long id) {
         User foundUser = this.findUserById(id);
         foundUser.setRole(Role.ADMIN);
         return userRepo.save(foundUser);
