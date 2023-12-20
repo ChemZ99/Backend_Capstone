@@ -39,5 +39,4 @@ public class Hotel {
     private List<Review> reviews;
     @OneToMany(mappedBy = "hotel")
     private List<Reservation> reservations;
-
 }

@@ -2,6 +2,7 @@ package Personal.Capstone.Controllers;
 
 
 import Personal.Capstone.Entities.User;
+import Personal.Capstone.Payloads_DTOs.NewUserDTO;
 import Personal.Capstone.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -40,6 +41,7 @@ public class UserController {
     }
 
     @GetMapping("/me")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public UserDetails getLoggedProfile(@AuthenticationPrincipal UserDetails loggedUser) {
         return loggedUser;
     }

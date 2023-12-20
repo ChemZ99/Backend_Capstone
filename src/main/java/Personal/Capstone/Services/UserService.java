@@ -68,11 +68,11 @@ public class UserService {
     public User findUserByIdAndUpdate(long id, User body) throws NotFoundException {
         User target = this.findUserById(id);
         target.setUsername(body.getUsername());
-        target.setRole(body.getRole());
+        target.setEmail(body.getEmail());
+        target.setPassword(body.getPassword());
         target.setFirstName(body.getFirstName());
         target.setLastName(body.getLastName());
-        target.setEmail(body.getEmail());
-        target.setPassword(bcrypt.encode(body.getPassword()));
+        target.setRole(body.getRole());
         target.setAvatar(body.getAvatar());
         return userRepo.save(target);
     }
