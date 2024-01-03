@@ -1,5 +1,6 @@
 package Personal.Capstone.Entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -38,5 +39,6 @@ public class Hotel {
     @OneToMany(mappedBy = "hotel")
     private List<Review> reviews;
     @OneToMany(mappedBy = "hotel")
+    @JsonManagedReference
     private List<Reservation> reservations;
 }
