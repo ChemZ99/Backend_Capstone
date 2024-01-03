@@ -1,6 +1,7 @@
 package Personal.Capstone.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -37,6 +38,7 @@ public class User implements UserDetails {
     @Column
     private String avatar;
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    @JsonManagedReference
     private List<Review> reviews;
 
 

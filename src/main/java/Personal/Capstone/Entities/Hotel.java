@@ -37,6 +37,7 @@ public class Hotel {
     private City city;
 
     @OneToMany(mappedBy = "hotel")
+    @JsonManagedReference
     private List<Review> reviews;
     @OneToMany(mappedBy = "hotel")
     @JsonManagedReference

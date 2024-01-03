@@ -1,5 +1,7 @@
 package Personal.Capstone.Entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -21,8 +23,10 @@ public class Review {
     private LocalDate date_of_dispatch;
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User user;
     @ManyToOne
     @JoinColumn(name = "hotel_id")
+    @JsonIgnore
     private Hotel hotel;
 }
