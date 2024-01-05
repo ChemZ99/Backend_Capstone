@@ -32,7 +32,6 @@ public class ReviewService {
         newReview.setDescription(reviewDTO.description());
         newReview.setDate_of_dispatch(reviewDTO.date_of_dispatch());
         newReview.setUser(userService.findUserById(reviewDTO.userid()));
-        newReview.setHotel(hotelService.findHotelById(reviewDTO.hotelid()));
         return reviewRepo.save(newReview);
     }
 
@@ -51,7 +50,6 @@ public class ReviewService {
         target.setDescription(body.getDescription());
         target.setDate_of_dispatch(body.getDate_of_dispatch());
         target.setUser(body.getUser());
-        target.setHotel(body.getHotel());
         return reviewRepo.save(target);
     }
 

@@ -30,7 +30,6 @@ public class ReservationService {
         newReservation.setReservation_start(reservationDTO.reservation_start());
         newReservation.setReservation_end(reservationDTO.reservation_end());
         newReservation.setPeriod(reservationDTO.period());
-        newReservation.setHotel(hotelService.findHotelById(reservationDTO.hotelid()));
         return reservationRepo.save(newReservation);
     }
 
@@ -48,7 +47,6 @@ public class ReservationService {
         target.setReservation_start(body.getReservation_start());
         target.setReservation_end(body.getReservation_end());
         target.setPeriod(body.getPeriod());
-        target.setHotel(body.getHotel());
         return reservationRepo.save(target);
     }
 
