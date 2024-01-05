@@ -29,7 +29,6 @@ public class ReservationService {
         Reservation newReservation = new Reservation();
         newReservation.setReservation_start(reservationDTO.reservation_start());
         newReservation.setReservation_end(reservationDTO.reservation_end());
-        newReservation.setPeriod(reservationDTO.period());
         return reservationRepo.save(newReservation);
     }
 
@@ -46,7 +45,6 @@ public class ReservationService {
         Reservation target = this.findReservationById(id);
         target.setReservation_start(body.getReservation_start());
         target.setReservation_end(body.getReservation_end());
-        target.setPeriod(body.getPeriod());
         return reservationRepo.save(target);
     }
 

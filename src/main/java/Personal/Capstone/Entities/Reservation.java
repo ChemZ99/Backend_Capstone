@@ -24,21 +24,19 @@ public class Reservation {
     @Column
     private LocalDate reservation_end;
     @Column
-    private Period period;
-    @Column
+    @Enumerated(EnumType.STRING)
     private Reservation_Type reservation_type;
     @Column
     private int price_per_day;
     @ManyToOne
-    @JoinColumn(name = "hotel_id")
-    private Hotel hotel;
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    public Reservation(LocalDate reservation_start, LocalDate reservation_end, Period period, Reservation_Type reservation_type, int price_per_day) {
+    public Reservation(LocalDate reservation_start, LocalDate reservation_end, Reservation_Type reservation_type, int price_per_day, User user) {
         this.reservation_start = reservation_start;
         this.reservation_end = reservation_end;
-        this.period = period;
         this.reservation_type = reservation_type;
         this.price_per_day = price_per_day;
-
+        this.user = user;
     }
 }

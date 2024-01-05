@@ -21,11 +21,11 @@ public class CapstoneApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CapstoneApplication.class, args);
-	}}
+	}
 
 	// database populator decommentare solo per il primo avvio
 
-	/*
+
 
 	@Resource
 	private ReviewRepository reviewRepo;
@@ -125,31 +125,31 @@ public class DatabasePopulatorRunner implements CommandLineRunner {
 
 		// reservations
 
-		Reservation exampleReservation1 = new Reservation(LocalDate.of(2023,10,10),LocalDate.of(2023,10,17), Period.of(0,0,7),Reservation_Type.NORMAL,85);
-		Reservation exampleReservation2 = new Reservation(LocalDate.of(2023,9,15),LocalDate.of(2023,9,22), Period.of(0,0,7),Reservation_Type.NORMAL,60);
-		Reservation exampleReservation3 = new Reservation(LocalDate.of(2023,8,2),LocalDate.of(2023,8,9), Period.of(0,0,7),Reservation_Type.NORMAL,70);
-		Reservation exampleReservation4 = new Reservation(LocalDate.of(2023,7,11),LocalDate.of(2023,10,18), Period.of(0,0,7),Reservation_Type.NORMAL,90);
-		Reservation exampleReservation5 = new Reservation(LocalDate.of(2023,6,22),LocalDate.of(2023,6,29), Period.of(0,0,7),Reservation_Type.NORMAL,110);
-		Reservation exampleReservation6 = new Reservation(LocalDate.of(2023,10,10),LocalDate.of(2023,10,17), Period.of(0,0,7),Reservation_Type.NORMAL,85);
-		Reservation exampleReservation7 = new Reservation(LocalDate.of(2023,9,15),LocalDate.of(2023,9,22), Period.of(0,0,7),Reservation_Type.NORMAL,60);
-		Reservation exampleReservation8 = new Reservation(LocalDate.of(2023,8,2),LocalDate.of(2023,8,9), Period.of(0,0,7),Reservation_Type.NORMAL,70);
-		Reservation exampleReservation9 = new Reservation(LocalDate.of(2023,7,11),LocalDate.of(2023,10,18), Period.of(0,0,7),Reservation_Type.NORMAL,90);
-		Reservation exampleReservation10 = new Reservation(LocalDate.of(2023,6,22),LocalDate.of(2023,6,29), Period.of(0,0,7),Reservation_Type.NORMAL,110);
-		Reservation exampleReservation11 = new Reservation(LocalDate.of(2023,10,10),LocalDate.of(2023,10,17), Period.of(0,0,7),Reservation_Type.NORMAL,85);
-		Reservation exampleReservation12 = new Reservation(LocalDate.of(2023,9,15),LocalDate.of(2023,9,22), Period.of(0,0,7),Reservation_Type.NORMAL,60);
-		Reservation exampleReservation13 = new Reservation(LocalDate.of(2023,8,2),LocalDate.of(2023,8,9), Period.of(0,0,7),Reservation_Type.NORMAL,70);
-		Reservation exampleReservation14 = new Reservation(LocalDate.of(2023,7,11),LocalDate.of(2023,10,18), Period.of(0,0,7),Reservation_Type.NORMAL,90);
-		Reservation exampleReservation15 = new Reservation(LocalDate.of(2023,6,22),LocalDate.of(2023,6,29), Period.of(0,0,7),Reservation_Type.NORMAL,110);
-		Reservation exampleReservation16 = new Reservation(LocalDate.of(2023,10,10),LocalDate.of(2023,10,17), Period.of(0,0,7),Reservation_Type.NORMAL,85);
-		Reservation exampleReservation17 = new Reservation(LocalDate.of(2023,9,15),LocalDate.of(2023,9,22), Period.of(0,0,7),Reservation_Type.NORMAL,60);
-		Reservation exampleReservation18 = new Reservation(LocalDate.of(2023,8,2),LocalDate.of(2023,8,9), Period.of(0,0,7),Reservation_Type.NORMAL,70);
-		Reservation exampleReservation19 = new Reservation(LocalDate.of(2023,7,11),LocalDate.of(2023,10,18), Period.of(0,0,7),Reservation_Type.NORMAL,90);
-		Reservation exampleReservation20 = new Reservation(LocalDate.of(2023,6,22),LocalDate.of(2023,6,29), Period.of(0,0,7),Reservation_Type.NORMAL,110);
-		Reservation exampleReservation21 = new Reservation(LocalDate.of(2023,10,10),LocalDate.of(2023,10,17), Period.of(0,0,7),Reservation_Type.NORMAL,85);
-		Reservation exampleReservation22 = new Reservation(LocalDate.of(2023,9,15),LocalDate.of(2023,9,22), Period.of(0,0,7),Reservation_Type.NORMAL,60);
-		Reservation exampleReservation23 = new Reservation(LocalDate.of(2023,8,2),LocalDate.of(2023,8,9), Period.of(0,0,7),Reservation_Type.NORMAL,70);
-		Reservation exampleReservation24 = new Reservation(LocalDate.of(2023,7,11),LocalDate.of(2023,10,18), Period.of(0,0,7),Reservation_Type.NORMAL,90);
-		Reservation exampleReservation25 = new Reservation(LocalDate.of(2023,6,22),LocalDate.of(2023,6,29), Period.of(0,0,7),Reservation_Type.NORMAL,110);
+		Reservation exampleReservation1 = new Reservation(LocalDate.of(2023,10,10),LocalDate.of(2023,10,17),Reservation_Type.NORMAL,85,user);
+		Reservation exampleReservation2 = new Reservation(LocalDate.of(2023,9,15),LocalDate.of(2023,9,22),Reservation_Type.NORMAL,60,user);
+		Reservation exampleReservation3 = new Reservation(LocalDate.of(2023,8,2),LocalDate.of(2023,8,9),Reservation_Type.NORMAL,70,user);
+		Reservation exampleReservation4 = new Reservation(LocalDate.of(2023,7,11),LocalDate.of(2023,10,18),Reservation_Type.NORMAL,90,user);
+		Reservation exampleReservation5 = new Reservation(LocalDate.of(2023,6,22),LocalDate.of(2023,6,29),Reservation_Type.NORMAL,110,user);
+		Reservation exampleReservation6 = new Reservation(LocalDate.of(2023,10,10),LocalDate.of(2023,10,17),Reservation_Type.NORMAL,85,user);
+		Reservation exampleReservation7 = new Reservation(LocalDate.of(2023,9,15),LocalDate.of(2023,9,22),Reservation_Type.NORMAL,60,user);
+		Reservation exampleReservation8 = new Reservation(LocalDate.of(2023,8,2),LocalDate.of(2023,8,9),Reservation_Type.NORMAL,70,user);
+		Reservation exampleReservation9 = new Reservation(LocalDate.of(2023,7,11),LocalDate.of(2023,10,18),Reservation_Type.NORMAL,90,user);
+		Reservation exampleReservation10 = new Reservation(LocalDate.of(2023,6,22),LocalDate.of(2023,6,29),Reservation_Type.NORMAL,110,user);
+		Reservation exampleReservation11 = new Reservation(LocalDate.of(2023,10,10),LocalDate.of(2023,10,17),Reservation_Type.NORMAL,85,user);
+		Reservation exampleReservation12 = new Reservation(LocalDate.of(2023,9,15),LocalDate.of(2023,9,22),Reservation_Type.NORMAL,60,user);
+		Reservation exampleReservation13 = new Reservation(LocalDate.of(2023,8,2),LocalDate.of(2023,8,9),Reservation_Type.NORMAL,70,user);
+		Reservation exampleReservation14 = new Reservation(LocalDate.of(2023,7,11),LocalDate.of(2023,10,18),Reservation_Type.NORMAL,90,user);
+		Reservation exampleReservation15 = new Reservation(LocalDate.of(2023,6,22),LocalDate.of(2023,6,29),Reservation_Type.NORMAL,110,user);
+		Reservation exampleReservation16 = new Reservation(LocalDate.of(2023,10,10),LocalDate.of(2023,10,17),Reservation_Type.NORMAL,85,user);
+		Reservation exampleReservation17 = new Reservation(LocalDate.of(2023,9,15),LocalDate.of(2023,9,22),Reservation_Type.NORMAL,60,user);
+		Reservation exampleReservation18 = new Reservation(LocalDate.of(2023,8,2),LocalDate.of(2023,8,9),Reservation_Type.NORMAL,70,user);
+		Reservation exampleReservation19 = new Reservation(LocalDate.of(2023,7,11),LocalDate.of(2023,10,18),Reservation_Type.NORMAL,90,user);
+		Reservation exampleReservation20 = new Reservation(LocalDate.of(2023,6,22),LocalDate.of(2023,6,29),Reservation_Type.NORMAL,110,user);
+		Reservation exampleReservation21 = new Reservation(LocalDate.of(2023,10,10),LocalDate.of(2023,10,17),Reservation_Type.NORMAL,85,user);
+		Reservation exampleReservation22 = new Reservation(LocalDate.of(2023,9,15),LocalDate.of(2023,9,22),Reservation_Type.NORMAL,60,user);
+		Reservation exampleReservation23 = new Reservation(LocalDate.of(2023,8,2),LocalDate.of(2023,8,9),Reservation_Type.NORMAL,70,user);
+		Reservation exampleReservation24 = new Reservation(LocalDate.of(2023,7,11),LocalDate.of(2023,10,18),Reservation_Type.NORMAL,90,user);
+		Reservation exampleReservation25 = new Reservation(LocalDate.of(2023,6,22),LocalDate.of(2023,6,29),Reservation_Type.NORMAL,110,user);
 		exampleReservations1.add(exampleReservation1);
 		exampleReservations1.add(exampleReservation2);
 		exampleReservations1.add(exampleReservation3);
@@ -221,7 +221,7 @@ public class DatabasePopulatorRunner implements CommandLineRunner {
 		userRepo.save(user);
 		userRepo.save(admin);
 		cityRepo.save(firenze);
-		cityRepo.save(milano);
+		/*cityRepo.save(milano);
 		cityRepo.save(bologna);
 		hotelRepo.save(hotel1Firenze);
 		hotelRepo.save(hotel2Firenze);
@@ -262,9 +262,8 @@ public class DatabasePopulatorRunner implements CommandLineRunner {
 		reservationRepo.save(exampleReservation22);
 		reservationRepo.save(exampleReservation23);
 		reservationRepo.save(exampleReservation24);
-		reservationRepo.save(exampleReservation25);
-	}
-}
+		reservationRepo.save(exampleReservation25);*/
+	}}
 }
 
-	 */
+

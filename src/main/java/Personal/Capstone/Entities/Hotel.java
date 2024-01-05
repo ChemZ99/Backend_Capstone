@@ -41,8 +41,10 @@ public class Hotel {
     @JsonBackReference
     private City city;
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "hotel_id")
     private List<Review> reviews;
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "hotel_id")
     private List<Reservation> reservations;
 
     public Hotel(String name, int stars, Hotel_Type hotelType, boolean wifi, boolean breakfast, boolean pool, boolean parking, String websiteURL, City city, List<Review> reviews, List<Reservation> reservations) {
