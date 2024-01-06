@@ -25,7 +25,7 @@ public class CapstoneApplication {
 
 	// database populator decommentare solo per il primo avvio
 
-
+	/*
 
 	@Resource
 	private ReviewRepository reviewRepo;
@@ -221,49 +221,50 @@ public class DatabasePopulatorRunner implements CommandLineRunner {
 		userRepo.save(user);
 		userRepo.save(admin);
 		cityRepo.save(firenze);
-		/*cityRepo.save(milano);
-		cityRepo.save(bologna);
-		hotelRepo.save(hotel1Firenze);
-		hotelRepo.save(hotel2Firenze);
-		hotelRepo.save(hotel3Firenze);
-		hotelRepo.save(hotel4Firenze);
-		hotelRepo.save(hotel5Firenze);
-		hotelRepo.save(hotel1Milano);
-		hotelRepo.save(hotel2Milano);
-		hotelRepo.save(hotel3Milano);
-		hotelRepo.save(hotel4Milano);
-		hotelRepo.save(hotel5Milano);
-		hotelRepo.save(hotel1Bologna);
-		hotelRepo.save(hotel2Bologna);
-		hotelRepo.save(hotel3Bologna);
-		hotelRepo.save(hotel4Bologna);
-		hotelRepo.save(hotel5Bologna);
-		reservationRepo.save(exampleReservation1);
-		reservationRepo.save(exampleReservation2);
-		reservationRepo.save(exampleReservation3);
-		reservationRepo.save(exampleReservation4);
-		reservationRepo.save(exampleReservation5);
-		reservationRepo.save(exampleReservation6);
-		reservationRepo.save(exampleReservation7);
-		reservationRepo.save(exampleReservation8);
-		reservationRepo.save(exampleReservation9);
-		reservationRepo.save(exampleReservation10);
-		reservationRepo.save(exampleReservation11);
-		reservationRepo.save(exampleReservation12);
-		reservationRepo.save(exampleReservation13);
-		reservationRepo.save(exampleReservation14);
-		reservationRepo.save(exampleReservation15);
-		reservationRepo.save(exampleReservation16);
-		reservationRepo.save(exampleReservation17);
-		reservationRepo.save(exampleReservation18);
-		reservationRepo.save(exampleReservation19);
-		reservationRepo.save(exampleReservation20);
-		reservationRepo.save(exampleReservation21);
-		reservationRepo.save(exampleReservation22);
-		reservationRepo.save(exampleReservation23);
-		reservationRepo.save(exampleReservation24);
-		reservationRepo.save(exampleReservation25);*/
+		//cityRepo.save(milano);
+		//cityRepo.save(bologna);
+		//hotelRepo.save(hotel1Firenze);
+		//hotelRepo.save(hotel2Firenze);
+		//hotelRepo.save(hotel3Firenze);
+		//hotelRepo.save(hotel4Firenze);
+		//hotelRepo.save(hotel5Firenze);
+		//hotelRepo.save(hotel1Milano);
+		//hotelRepo.save(hotel2Milano);
+		//hotelRepo.save(hotel3Milano);
+		//hotelRepo.save(hotel4Milano);
+		//hotelRepo.save(hotel5Milano);
+		//hotelRepo.save(hotel1Bologna);
+		//hotelRepo.save(hotel2Bologna);
+		//hotelRepo.save(hotel3Bologna);
+		//hotelRepo.save(hotel4Bologna);
+		//hotelRepo.save(hotel5Bologna);
+		//reservationRepo.save(exampleReservation1);
+		//reservationRepo.save(exampleReservation2);
+		//reservationRepo.save(exampleReservation3);
+		//reservationRepo.save(exampleReservation4);
+		//reservationRepo.save(exampleReservation5);
+		//reservationRepo.save(exampleReservation6);
+		//reservationRepo.save(exampleReservation7);
+		//reservationRepo.save(exampleReservation8);
+		//reservationRepo.save(exampleReservation9);
+		//reservationRepo.save(exampleReservation10);
+		//reservationRepo.save(exampleReservation11);
+		//reservationRepo.save(exampleReservation12);
+		//reservationRepo.save(exampleReservation13);
+		//reservationRepo.save(exampleReservation14);
+		//reservationRepo.save(exampleReservation15);
+		//reservationRepo.save(exampleReservation16);
+		//reservationRepo.save(exampleReservation17);
+		//reservationRepo.save(exampleReservation18);
+		//reservationRepo.save(exampleReservation19);
+		//reservationRepo.save(exampleReservation20);
+		//reservationRepo.save(exampleReservation21);
+		//reservationRepo.save(exampleReservation22);
+		//reservationRepo.save(exampleReservation23);
+		//reservationRepo.save(exampleReservation24);
+		//reservationRepo.save(exampleReservation25);
 	}}
+		*/
 }
 
 

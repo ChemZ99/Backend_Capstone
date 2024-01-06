@@ -37,7 +37,6 @@ public class CityController {
     }
 
     @GetMapping("/name={name}")
-    @PreAuthorize("hasAuthority('ADMIN')")
     City findCityByName(@PathVariable String name) {
         return cityService.findCityByName(name);
     }
