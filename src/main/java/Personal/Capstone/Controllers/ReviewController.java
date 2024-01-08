@@ -35,7 +35,7 @@ public class ReviewController {
         return reviewService.findReviewById(id);
     }
 
-    @PostMapping("")
+    @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasAuthority('ADMIN')")
     public Review saveReview(@RequestBody @Validated NewReviewDTO body, BindingResult validation) {
@@ -56,7 +56,7 @@ public class ReviewController {
         return reviewService.findReviewByIdAndUpdate(id, body);
     }
 
-    @DeleteMapping("/id={id}")
+    @DeleteMapping("/delete/id={id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PreAuthorize("hasAuthority('ADMIN')")
     void findReviewByIdAndDelete(@PathVariable long id) {

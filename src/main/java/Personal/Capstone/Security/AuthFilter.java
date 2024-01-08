@@ -18,6 +18,9 @@ import org.springframework.util.AntPathMatcher;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Component
 public class AuthFilter extends OncePerRequestFilter {
@@ -56,7 +59,32 @@ public class AuthFilter extends OncePerRequestFilter {
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
-        //return new AntPathMatcher().match("/auth/**", request.getServletPath());
-        return new AntPathRequestMatcher("/**","GET").matches(request);
+
+        //  String[] excludedEndpoints = new String[] {"/auth/**"};
+        List<String> excludedEndpoints = new ArrayList<String>();
+
+        excludedEndpoints.add("/auth/**");
+        excludedEndpoints.add("/cities");
+        excludedEndpoints.add("/cities/name=**");
+        excludedEndpoints.add("/cities/id=**");
+        excludedEndpoints.add("/hotels");
+        excludedEndpoints.add("/hotels/name=**");
+        excludedEndpoints.add("/hotels/id=**");
+        excludedEndpoints.add("/reservations");
+        excludedEndpoints.add("/reservations/id=**");
+        excludedEndpoints.add("/reviews");
+        excludedEndpoints.add("/reviews/id=**");
+        excludedEndpoints.add("/users");
+        excludedEndpoints.add("/users/me");
+        excludedEndpoints.add("/users/me/modify");
+        excludedEndpoints.add("users/me/upload");
+        excludedEndpoints.add("/users/id=**");
+
+
+        return Arrays.stream(excludedEndpoints.toArray())
+                .anyMatch(e -> new AntPathMatcher().match((String) e, request.getServletPath()));
+
+        //      return new AntPathMatcher().match("/auth/**", request.getServletPath());
+        //       return new AntPathRequestMatcher("/**","GET").matches(request);
     }
 }

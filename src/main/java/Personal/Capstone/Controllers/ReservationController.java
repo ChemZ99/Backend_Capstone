@@ -36,7 +36,7 @@ public class ReservationController {
         return reservationService.findReservationById(id);
     }
 
-    @PostMapping("")
+    @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasAuthority('ADMIN')")
     public Reservation saveReservation(@RequestBody @Validated NewReservationDTO body, BindingResult validation) {
@@ -57,7 +57,7 @@ public class ReservationController {
         return reservationService.findReservationByIdAndUpdate(id, body);
     }
 
-    @DeleteMapping("/id={id}")
+    @DeleteMapping("/delete/id={id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PreAuthorize("hasAuthority('ADMIN')")
     void findReservationByIdAndDelete(@PathVariable long id) {

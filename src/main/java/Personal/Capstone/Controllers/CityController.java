@@ -41,7 +41,7 @@ public class CityController {
         return cityService.findCityByName(name);
     }
 
-    @PostMapping("")
+    @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasAuthority('ADMIN')")
     public City saveCity(@RequestBody @Validated NewCityDTO body, BindingResult validation) {
@@ -62,7 +62,7 @@ public class CityController {
         return cityService.findCityByIdAndUpdate(id, body);
     }
 
-    @DeleteMapping("/id={id}")
+    @DeleteMapping("/delete/id={id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PreAuthorize("hasAuthority('ADMIN')")
     void findCityByIdAndDelete(@PathVariable long id) {

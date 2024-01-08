@@ -33,7 +33,7 @@ public class UserController {
         return userService.findUserById(id);
     }
 
-    @DeleteMapping("/id={id}")
+    @DeleteMapping("/delete/id={id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PreAuthorize("hasAuthority('ADMIN')")
     void findUserByIdAndDelete(@PathVariable long id) {

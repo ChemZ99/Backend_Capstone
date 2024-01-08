@@ -38,7 +38,7 @@ public class HotelController {
         return hotelService.findHotelByName(name);
     }
 
-    @PostMapping("")
+    @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasAuthority('ADMIN')")
     public Hotel saveHotel(@RequestBody @Validated NewHotelDTO body, BindingResult validation) {
@@ -59,7 +59,7 @@ public class HotelController {
         return hotelService.findHotelByIdAndUpdate(id, body);
     }
 
-    @DeleteMapping("/id={id}")
+    @DeleteMapping("/delete/id={id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PreAuthorize("hasAuthority('ADMIN')")
     void findHotelByIdAndDelete(@PathVariable long id) {
