@@ -13,7 +13,6 @@ public record NewReservationDTO (
         LocalDate reservation_start,
         @NotNull(message = "Reservation end date is required")
         LocalDate reservation_end,
-        Period period,
         @NotNull(message = "Hotelid is required")
         long hotelid
 ) {
